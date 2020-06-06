@@ -9,10 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
- *
- * <Add Extended Description Here>
+ * @file stats.h
+ * @brief statistical analytics on a dataset
+
+ * Analyze an array of unsigned char data items and report analytics on the 
+ * maximum, minimum, mean, and median of the data set. The data set is ordered 
+ * from large to small. All statistics should be rounded down to the nearest integer. 
+ * The data should be printed to the screen in nicely formatted presentation.
  *
  * @author Kishan Shingala
  * @date 6 june 2020
@@ -21,20 +24,97 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief Print data array statistics.
+ *
+ * A function that prints the statistics of an array including minimum, maximum, 
+ * mean, and median.
+ *
+ * @param median 	Median value
+ * @param mean 	 	Mean value	
+ * @param max	    Maximum value	
+ * @param minn   	Minimum value	
+ *
+ * @return void
+ */
+void print_statistics(int median, int mean, int max, int min);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Prints array to screen.
  *
- * <Add Extended Description Here>
+ * Given an array of data and a length, prints the array to the screen.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param data 	Char data array
+ * @param len 	Array length	
  *
- * @return <Add Return Informaiton here>
+ * @return void
  */
+void print_array(unsigned char *data, int len);
 
+/**
+ * @brief Calculate array data median value.
+ *
+ * Given an array of data and a length, returns the median value.
+ * Assume the array is ordered.
+ *
+ * @param data 	Char data array
+ * @param len 	Array length	
+ *
+ * @return The data median value
+ */
+int find_median(unsigned char *data, int len);
+
+/**
+ * @brief Calculate array data mean value.
+ *
+ * Given an array of data and a length, returns the mean.
+ * Assume the array is ordered.
+ *
+ * @param data 	Char data array
+ * @param len 	Array length	
+ *
+ * @return The data mean value
+ */
+int find_mean(unsigned char *data, int len);
+
+/**
+ * @brief Calculate array data maximum value.
+ *
+ * Given an array of data and a length, returns the maximum.
+ * Assume the array is not ordered.
+ *
+ * @param data 	Char data array
+ * @param len 	Array length	
+ *
+ * @return The data maximum value
+ */
+int find_maximum(unsigned char *data, int len); 
+
+/**
+ * @brief Calculate array data minimum value.
+ *
+ * Given an array of data and a length, returns the minimum.
+ * Assume the array is not ordered.
+ *
+ * @param data 	Char data array
+ * @param len 	Array length	
+ *
+ * @return The data minimum value
+ */
+int find_minimum(unsigned char *data, int len);
+
+/**
+ * @brief Calculate array data mean value.
+ *
+ * Given an array of data and a length, sorts the array from 
+ * largest to smallest. (The zeroth Element should be the largest 
+ * value, and the last element (n-1) should be the smallest value).
+ *
+ * @param data 	Char data array
+ * @param len 	Array length	
+ *
+ * @return void
+ */
+void sort_array(unsigned char *data, int len);
 
 #endif /* __STATS_H__ */
